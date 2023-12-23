@@ -28,55 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.WordEntry = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LongestWordBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.textboxWordEntry = new System.Windows.Forms.TextBox();
+            this.lblLettersAvailable = new System.Windows.Forms.Label();
+            this.lblLongestWordText = new System.Windows.Forms.Label();
+            this.btnGuessWord = new System.Windows.Forms.Button();
+            this.textboxLongestWordResult = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // WordEntry
+            // textboxWordEntry
             // 
-            this.WordEntry.Location = new System.Drawing.Point(61, 76);
-            this.WordEntry.Name = "WordEntry";
-            this.WordEntry.Size = new System.Drawing.Size(143, 22);
-            this.WordEntry.TabIndex = 0;
+            this.textboxWordEntry.Location = new System.Drawing.Point(61, 76);
+            this.textboxWordEntry.Name = "textboxWordEntry";
+            this.textboxWordEntry.Size = new System.Drawing.Size(143, 22);
+            this.textboxWordEntry.TabIndex = 0;
             // 
-            // label1
+            // lblLettersAvailable
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Letters Available";
+            this.lblLettersAvailable.AutoSize = true;
+            this.lblLettersAvailable.Location = new System.Drawing.Point(78, 57);
+            this.lblLettersAvailable.Name = "lblLettersAvailable";
+            this.lblLettersAvailable.Size = new System.Drawing.Size(107, 16);
+            this.lblLettersAvailable.TabIndex = 1;
+            this.lblLettersAvailable.Text = "Letters Available";
             // 
-            // LongestWordBox
+            // lblLongestWordText
             // 
-            this.LongestWordBox.Location = new System.Drawing.Point(61, 149);
-            this.LongestWordBox.Name = "LongestWordBox";
-            this.LongestWordBox.ReadOnly = true;
-            this.LongestWordBox.Size = new System.Drawing.Size(143, 22);
-            this.LongestWordBox.TabIndex = 2;
-            this.LongestWordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblLongestWordText.AutoSize = true;
+            this.lblLongestWordText.Location = new System.Drawing.Point(87, 148);
+            this.lblLongestWordText.Name = "lblLongestWordText";
+            this.lblLongestWordText.Size = new System.Drawing.Size(94, 16);
+            this.lblLongestWordText.TabIndex = 3;
+            this.lblLongestWordText.Text = "Longest Word:";
             // 
-            // label2
+            // btnGuessWord
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Longest Word";
+            this.btnGuessWord.Location = new System.Drawing.Point(61, 111);
+            this.btnGuessWord.Name = "btnGuessWord";
+            this.btnGuessWord.Size = new System.Drawing.Size(143, 28);
+            this.btnGuessWord.TabIndex = 4;
+            this.btnGuessWord.Text = "Guess Word!";
+            this.btnGuessWord.UseVisualStyleBackColor = true;
+            // 
+            // textboxLongestWordResult
+            // 
+            this.textboxLongestWordResult.Location = new System.Drawing.Point(61, 167);
+            this.textboxLongestWordResult.Name = "textboxLongestWordResult";
+            this.textboxLongestWordResult.ReadOnly = true;
+            this.textboxLongestWordResult.Size = new System.Drawing.Size(143, 22);
+            this.textboxLongestWordResult.TabIndex = 5;
+            this.textboxLongestWordResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 212);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.LongestWordBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.WordEntry);
+            this.ClientSize = new System.Drawing.Size(270, 235);
+            this.Controls.Add(this.textboxLongestWordResult);
+            this.Controls.Add(this.btnGuessWord);
+            this.Controls.Add(this.lblLongestWordText);
+            this.Controls.Add(this.lblLettersAvailable);
+            this.Controls.Add(this.textboxWordEntry);
             this.Name = "Form1";
             this.Text = "CountdownBot";
             this.ResumeLayout(false);
@@ -86,10 +97,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox WordEntry;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox LongestWordBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textboxWordEntry;
+        private System.Windows.Forms.Label lblLettersAvailable;
+        private System.Windows.Forms.Label lblLongestWordText;
+        private System.Windows.Forms.Button btnGuessWord;
+        private System.Windows.Forms.TextBox textboxLongestWordResult;
     }
 }
 

@@ -9,14 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using CountdownBot;
 
 namespace CountdownBotForm
 {
     public partial class Form1 : Form
     {
+        WordGuesser guesser = new WordGuesser();
+
         public Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            
         }
 
         private void btnGuessWord_Click(object sender, EventArgs e)

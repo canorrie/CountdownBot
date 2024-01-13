@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CountdownBot\CountdownBot.csproj">
+      <Project>{dfbd9b3f-1146-40b5-81dd-37ee2817e677}</Project>
+      <Name>CountdownBot</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

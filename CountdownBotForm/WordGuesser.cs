@@ -157,7 +157,22 @@ namespace CountdownBotForm
                     return lettersDict.First().Key;
             }
 
-            return "no words can be made with these letters you silly wanker";
+            string longestWord = "";
+            for (int i = letters.Length - 1; i >= 0; i--)
+            {
+                string newLetters = "";
+                for (int j = letters.Length - 1; j >= 0; j--)
+                {
+                    if (i != j)
+                        newLetters += letters[j];
+                }
+                string wordResult = GuessWord(newLetters);
+                if (wordResult != "")
+                    if (wordResult.Length > longestWord.Length)
+                        longestWord = wordResult;
+            }
+
+            return longestWord;
         }
     }
 }

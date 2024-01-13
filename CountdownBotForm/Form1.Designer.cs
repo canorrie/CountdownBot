@@ -68,6 +68,7 @@
             this.btnGuessWord.TabIndex = 4;
             this.btnGuessWord.Text = "Guess Word!";
             this.btnGuessWord.UseVisualStyleBackColor = true;
+            this.btnGuessWord.Click += new System.EventHandler(this.btnGuessWord_Click);
             // 
             // textboxLongestWordResult
             // 

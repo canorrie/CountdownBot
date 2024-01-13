@@ -16,14 +16,12 @@ namespace CountdownBotForm
     {
         public Form1()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
-        public void btnGuessWord_click()
+        private void btnGuessWord_Click(object sender, EventArgs e)
         {
             textboxLongestWordResult.Text = String.Format("hell yeah brother", 0);
         }
-
     }
 }

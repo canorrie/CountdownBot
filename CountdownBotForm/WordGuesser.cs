@@ -150,7 +150,14 @@ namespace CountdownBotForm
 
             Dictionary<string, int> smallDict = wordDictionary.Where(x => x.Value == lettersHashCode).ToDictionary(x => x.Key, x => x.Value);
 
-            return letters;
+            for (int i = letters.Length; i > 0; i--)
+            {
+                Dictionary<string, int> lettersDict = smallDict.Where(x => x.Key.Length == i).ToDictionary(x => x.Key, x => x.Value);
+                if (lettersDict.Count > 0)
+                    return lettersDict.First().Key;
+            }
+
+            return "no words can be made with these letters you silly wanker";
         }
     }
 }

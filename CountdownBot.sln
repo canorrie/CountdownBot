@@ -3,12 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountdownBot", "CountdownBot\CountdownBot.csproj", "{DFBD9B3F-1146-40B5-81DD-37EE2817E677}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountdownBotForm", "CountdownBotForm\CountdownBotForm.csproj", "{A522585E-4645-48E1-BBBA-1F62F8F8C82A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{DFBD9B3F-1146-40B5-81DD-37EE2817E677} = {DFBD9B3F-1146-40B5-81DD-37EE2817E677}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DFBD9B3F-1146-40B5-81DD-37EE2817E677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFBD9B3F-1146-40B5-81DD-37EE2817E677}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFBD9B3F-1146-40B5-81DD-37EE2817E677}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFBD9B3F-1146-40B5-81DD-37EE2817E677}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A522585E-4645-48E1-BBBA-1F62F8F8C82A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A522585E-4645-48E1-BBBA-1F62F8F8C82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A522585E-4645-48E1-BBBA-1F62F8F8C82A}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordGuesser.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,10 +81,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CountdownBot\CountdownBot.csproj">
-      <Project>{dfbd9b3f-1146-40b5-81dd-37ee2817e677}</Project>
-      <Name>CountdownBot</Name>
-    </ProjectReference>
+    <Content Include="Dictionaries\words_alpha.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /E /Y /R "$(ProjectDir)\\Dictionaries\\words_alpha.txt" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

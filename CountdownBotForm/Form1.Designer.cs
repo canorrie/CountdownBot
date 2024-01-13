@@ -41,6 +41,7 @@
             this.textboxWordEntry.Name = "textboxWordEntry";
             this.textboxWordEntry.Size = new System.Drawing.Size(143, 22);
             this.textboxWordEntry.TabIndex = 0;
+            this.textboxWordEntry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblLettersAvailable
             // 

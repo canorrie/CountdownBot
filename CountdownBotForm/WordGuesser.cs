@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace CountdownBotForm
 {
@@ -8,7 +9,7 @@ namespace CountdownBotForm
     {
         public WordGuesser()
         {
-            ReadWords();
+            wordDictionary = ReadWords();
         }
 
         enum Letters
@@ -141,6 +142,15 @@ namespace CountdownBotForm
             }
 
             throw new Exception();
+        }
+
+        public string GuessWord(string letters)
+        {
+            int lettersHashCode = ParseString(letters);
+
+            Dictionary<string, int> smallDict = wordDictionary.Where(x => x.Value == lettersHashCode).ToDictionary(x => x.Key, x => x.Value);
+
+            return letters;
         }
     }
 }

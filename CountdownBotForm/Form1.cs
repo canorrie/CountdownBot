@@ -23,7 +23,7 @@ namespace CountdownBotForm
 
         private void btnGuessWord_Click(object sender, EventArgs e)
         {
-            string word = guesser.GuessWord(textboxWordEntry.Text);
+            string word = guesser.GuessWords(textboxWordEntry.Text);
             textboxLongestWordResult.Text = String.Format(word, 0);
         }
     }

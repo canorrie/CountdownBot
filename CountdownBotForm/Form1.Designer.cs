@@ -33,6 +33,8 @@
             this.lblLongestWordText = new System.Windows.Forms.Label();
             this.btnGuessWord = new System.Windows.Forms.Button();
             this.textboxLongestWordResult = new System.Windows.Forms.TextBox();
+            this.listViewMoreWords = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textboxWordEntry
@@ -80,11 +82,31 @@
             this.textboxLongestWordResult.TabIndex = 5;
             this.textboxLongestWordResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // listViewMoreWords
+            // 
+            this.listViewMoreWords.HideSelection = false;
+            this.listViewMoreWords.Location = new System.Drawing.Point(12, 230);
+            this.listViewMoreWords.Name = "listViewMoreWords";
+            this.listViewMoreWords.Size = new System.Drawing.Size(246, 252);
+            this.listViewMoreWords.TabIndex = 7;
+            this.listViewMoreWords.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(380, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Number stuff goes here";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 235);
+            this.ClientSize = new System.Drawing.Size(615, 494);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listViewMoreWords);
             this.Controls.Add(this.textboxLongestWordResult);
             this.Controls.Add(this.btnGuessWord);
             this.Controls.Add(this.lblLongestWordText);
@@ -104,6 +126,8 @@
         private System.Windows.Forms.Label lblLongestWordText;
         private System.Windows.Forms.Button btnGuessWord;
         private System.Windows.Forms.TextBox textboxLongestWordResult;
+        private System.Windows.Forms.ListView listViewMoreWords;
+        private System.Windows.Forms.Label label1;
     }
 }
 

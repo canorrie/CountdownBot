@@ -144,6 +144,48 @@ namespace CountdownBotForm
             throw new Exception();
         }
 
+        public string GuessWords(string letters)
+        {
+            for (int lettersToRemove = 0; lettersToRemove < letters.Length; lettersToRemove++)
+            {
+                List<string> lettersRemoved = GetRemovedLetterStrings(letters, lettersToRemove);
+                foreach (string toTest in lettersRemoved)
+                {
+                    string possibleWord = GuessWord(toTest);
+                    if (possibleWord != "")
+                        return possibleWord;
+                }
+            }
+
+            return "No words found";
+        }
+
+        public List<String> GetRemovedLetterStrings(string letters, int lettersToRemove)
+        {
+            List<string> strings = new List<string>();
+            strings.Add(letters);
+
+            for (int i = 0; i < lettersToRemove; i++)
+            {
+                List<string> newStrings = new List<string>();
+                foreach (string newLetters in strings)
+                {
+                    for (int j = 0; j < newLetters.Length; j++)
+                    {
+                        newStrings.Add(RemoveLetter(newLetters, j));
+                    }
+                }
+                strings = newStrings;
+            }
+
+            return strings;
+        }
+
+        public String RemoveLetter(string letters, int indexToRemove)
+        {
+            return letters.Remove(indexToRemove, 1);
+        }
+
         public string GuessWord(string letters)
         {
             int lettersHashCode = ParseString(letters);
@@ -154,25 +196,67 @@ namespace CountdownBotForm
             {
                 Dictionary<string, int> lettersDict = smallDict.Where(x => x.Key.Length == i).ToDictionary(x => x.Key, x => x.Value);
                 if (lettersDict.Count > 0)
-                    return lettersDict.First().Key;
-            }
-
-            string longestWord = "";
-            for (int i = letters.Length - 1; i >= 0; i--)
-            {
-                string newLetters = "";
-                for (int j = letters.Length - 1; j >= 0; j--)
                 {
-                    if (i != j)
-                        newLetters += letters[j];
-                }
-                string wordResult = GuessWord(newLetters);
-                if (wordResult != "")
-                    if (wordResult.Length > longestWord.Length)
-                        longestWord = wordResult;
+                    List<string> words = lettersDict.Keys.ToList();
+
+                    foreach(string word in words)
+                    {
+                        if (VerifyWord(letters, word))
+                        {
+                            return word;
+                        }
+                    }                    
+                }   
             }
 
-            return longestWord;
+            return "";
+        }
+
+        public bool VerifyWord(string letters, string word)
+        {
+            Dictionary<char, int> lettersDict = new Dictionary<char, int>();
+            Dictionary<char, int> wordDict = new Dictionary<char, int>();
+
+            List<char> lettersAvailable = new List<char>();
+
+            foreach (char letter in letters)
+            {
+                if (lettersDict.ContainsKey(letter))
+                {
+                    lettersDict[letter] += 1;
+                }                    
+                else
+                {
+                    lettersAvailable.Add(letter);
+                    lettersDict[letter] = 1;
+                }
+            }
+
+            foreach (char letter in word)
+            {
+                if (wordDict.ContainsKey(letter))
+                {
+                    wordDict[letter] += 1;
+                }
+                else
+                {
+                    wordDict[letter] = 1;
+                }
+            }
+
+            foreach(char letter in lettersAvailable)
+            {
+                if (wordDict.ContainsKey(letter) && lettersDict.ContainsKey(letter))
+                {
+                    //ensure that we have enough letters to make the word - this is handling for words with one or more duplicate letter
+                    if (wordDict[letter] > lettersDict[letter])
+                    {
+                        return false;
+                    }    
+                }
+            }
+
+            return true;
         }
     }
 }
